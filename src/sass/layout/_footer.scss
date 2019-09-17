@@ -1,0 +1,39 @@
+.footer {
+  border-top: 1px solid #e6e6e6;
+  padding-top: 60px;
+
+  &__list-right {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__list {
+    &:not(:last-child) {
+      margin-right: 60px;
+    }
+  }
+
+  &__list-item {
+    margin-bottom: 12px;
+  }
+
+  &__list-item-title {
+    font-weight: bold;
+    font-size: 24px;
+    color: #242424;
+  }
+
+  &__list-item-link {
+    color: #333333;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__copyright {
+    text-align: center;
+    margin-top: 128px;
+    color: #242424;
+  }
+}
