@@ -1,0 +1,19 @@
+.subscribe {
+  &__input {
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 20px;
+    height: 56px;
+    width: 100%;
+    max-width: 440px;
+    text-align: center;
+    background: #ffffff;
+    border: 1px solid #cccccc;
+    box-sizing: border-box;
+    border-radius: $bradius;
+
+    &:hover {
+      border-color: #000;
+    }
+  }
+}

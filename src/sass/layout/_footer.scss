@@ -4,28 +4,40 @@
   padding-bottom: 68px;
 
   &__content {
-    
     @include breakpoint(medium) {
       display: flex;
       justify-content: space-between;
     }
   }
 
+  &__logo {
+    display: block;
+    margin-bottom: 60px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include breakpoint(medium) {
+      display: none;
+    }
+  }
+
   &__list-right {
-    @include breakpoint(medium){
+    @include breakpoint(medium) {
       justify-content: space-between;
       display: flex;
     }
-
   }
 
   &__list {
-    @include breakpoint (medium){
+    @include breakpoint(medium) {
       margin-bottom: 0;
+
+      &:not(:last-child) {
+        margin-right: 60px;
+      }
     }
     &:not(:last-child) {
       margin-bottom: 44px;
-      margin-right: 60px;
     }
   }
 
@@ -55,10 +67,9 @@
     line-height: 1.5;
     font-size: 12px;
 
-    @include breakpoint (large) {
+    @include breakpoint(large) {
       margin-top: 128px;
       font-size: inherit;
     }
-
   }
 }

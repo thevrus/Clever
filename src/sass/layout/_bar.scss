@@ -1,120 +1,129 @@
 .bar {
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+  position: fixed;
+  padding-bottom: 8px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  box-shadow: 0px -4px 40px rgba(0, 0, 0, 0.1);
+
+  @include breakpoint(medium) {
+    padding-bottom: 0;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__wrap {
+    display: flex;
+    align-items: baseline;
+    position: relative;
+
+    @include breakpoint(medium) {
+      align-items: center;
+    }
+  }
+
+  &__chat {
+    margin-right: 20px;
+    transition: opacity 0.3s;
+
+    &:hover ~ .bar__socials,
+    &:active ~ .bar__socials {
+      display: block;
+    }
+    @include breakpoint(large) {
+      &:hover {
+        opacity: 0.8;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__phone {
+    display: block;
+
+    @include breakpoint(medium) {
+      display: none;
+    }
+  }
+
+  &__phone-link {
+    display: none;
+
+    @include breakpoint(medium) {
+      display: block;
+    }
+
+    color: #000000;
+    font-size: 18px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__subscribe {
+    padding: 12px 16px;
+    background: #000000;
+    border-radius: 4px;
+    color: #ffffff;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: 0.05em;
+
+    @include breakpoint(360px) {
+      letter-spacing: 0.04em;
+      padding: 12px 28px;
+      font-size: 14px;
+    }
+    @include btnPress();
+  }
+
+  &__socials {
+    display: none;
+    position: absolute;
+    top: -196px;
     left: 0;
-    height: 68px;
+    padding: 18px 20px;
+    border-radius: 4px;
+    background: #000000;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    color: #ffffff;
+
+    &:hover {
+      display: block;
+    }
+
+    &:hover > .bar__socials-item:not(:hover) {
+      opacity: 0.6;
+    }
+  }
+
+  &__socials-item {
+    transition: opacity 0.3s;
+    cursor: pointer;
+
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__item-link {
     display: flex;
     align-items: center;
-    background: #FFFFFF;
-    box-shadow: 0px -4px 40px rgba(0, 0, 0, 0.1);
+    color: #ffffff;
+  }
 
-    &__content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    &__wrap {
-        display: flex;
-        align-items: center;
-        position: relative;
-    }
-
-    &__chat {
-        margin-right: 16px;
-
-        &:hover {
-            opacity: .8;
-            cursor: pointer;
-        }
-
-        &::hover .bar__socials {
-            // visibility: visible;
-            display: block;
-        }
-    }
-
-    &__phone {
-        display: block;
-
-        @include breakpoint(medium) {
-            display: none;
-        }
-    }
-
-
-    &__phone-link {
-        display: none;
-
-        @include breakpoint(medium) {
-            display: block;
-        }
-
-        color: #000000;
-        font-size: 18px;
-
-        &:hover {
-            text-decoration: underline;
-        }
-    }
-
-    &__subscribe {
-        padding: 12px 24px;
-        background: #000000;
-        border-radius: 4px;
-        color: #FFFFFF;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 20px;
-        text-align: center;
-        letter-spacing: 0.05em;
-        
-        @include breakpoint(360px) {
-            letter-spacing: 0.04em;
-            padding: 12px 32px;
-            font-size: 14px;
-        }
-        @include btnPress();
-    }
-
-    &__socials {
-        // visibility: hidden;
-        display: none;
-        position: absolute;
-        top: -210px;
-        left: 0;
-        padding: 18px 20px;
-        border-radius: 4px;
-        background: #000000;
-        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-        color: #FFFFFF;
-
-    }
-
-    &__socials-item {
-        transition: opacity .3s;
-        opacity: .6;
-
-        &:not(:last-child) {
-            margin-bottom: 16px;
-        }
-
-        &:hover {
-            opacity: 1;
-            cursor: pointer;
-
-        }
-    }
-
-    &__item-link {
-        display: flex;
-        align-items: center;
-        color: #FFFFFF;
-
-    }
-
-    &__social-icon {
-        margin-right: 8px;
-    }
+  &__social-icon {
+    margin-right: 8px;
+  }
 }

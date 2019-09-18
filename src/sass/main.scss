@@ -2,6 +2,7 @@
 @import "vendors/normalize";
 
 // Utils
+@import "utils/scroll";
 @import "utils/animations";
 @import "utils/helpers";
 @import "utils/variables";
@@ -17,6 +18,7 @@
 @import "layout/grid";
 @import "layout/nav";
 @import "layout/header";
+@import "layout/subscribe";
 @import "layout/section";
 @import "layout/footer";
 @import "layout/bar";

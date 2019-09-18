@@ -1,14 +1,15 @@
-* {
+html {
   box-sizing: border-box;
 }
 
-*::before,
-*::after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
 body {
-  // overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 ul {
@@ -19,4 +20,12 @@ ul {
 
 a {
   text-decoration: none;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  select,
+  textarea,
+  input {
+    font-size: 16px;
+  }
 }

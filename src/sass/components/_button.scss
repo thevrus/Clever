@@ -1,0 +1,24 @@
+.button {
+  margin: 0 auto;
+  display: block;
+  max-width: 440px;
+  width: 100%;
+  height: 56px;
+  margin-bottom: 20px;
+  text-align: center;
+  letter-spacing: 0.02em;
+
+  appearance: none;
+  background-color: #fafafa;
+  border: none;
+  border-radius: $bradius;
+  cursor: pointer;
+
+  @include btnPress();
+
+  &--fancy {
+    color: #fff;
+    box-shadow: 0px 10px 20px rgba(0, 64, 229, 0.1);
+    background-image: linear-gradient(97.12deg, #5581f1 0%, #1153fc 100%);
+  }
+}

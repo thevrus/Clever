@@ -1,0 +1,19 @@
+.section {
+  margin-bottom: 100px;
+
+  &__title {
+    font-size: 28px;
+    color: #000000;
+    margin-bottom: 16px;
+
+    @include breakpoint(medium) {
+      font-size: 36px;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #333333;
+  }
+}
