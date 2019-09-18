@@ -3,7 +3,6 @@
 
   &__title {
     font-size: 28px;
-    color: #000000;
     margin-bottom: 16px;
 
     @include breakpoint(medium) {
@@ -14,6 +13,5 @@
   &__subtitle {
     margin-bottom: 20px;
     font-size: 18px;
-    color: #333333;
   }
 }

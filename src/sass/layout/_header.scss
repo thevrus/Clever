@@ -1,0 +1,43 @@
+.header {
+  background-color: $headerColor;
+  min-height: 360px;
+  width: 100%;
+  margin-bottom: 100px;
+
+  @include breakpoint(large) {
+    min-height: calc(100vh - (68px + 80px));
+  }
+  &__content {
+    padding-top: 10%;
+
+    @include breakpoint(large) {
+      max-width: 566px;
+    }
+  }
+  &__title,
+  &__subtitle {
+    color: #333;
+    line-height: 1.5;
+  }
+
+  &__title {
+    letter-spacing: 0.04em;
+    font-size: 24px;
+    color: #f07363;
+
+    @include breakpoint(large) {
+      font-size: 40px;
+    }
+  }
+
+  &__subtitle {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+
+  @include breakpoint(medium) {
+    background: $headerColor url("img/girl-webp.webp") no-repeat right bottom;
+    background-size: auto 100%;
+  }
+}
