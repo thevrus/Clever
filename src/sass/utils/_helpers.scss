@@ -17,3 +17,8 @@
 .shake {
   @include shake();
 }
+
+.medium-zoom-image--opened {
+  max-width: 100% !important;
+  height: auto !important;
+}

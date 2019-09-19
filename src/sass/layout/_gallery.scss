@@ -7,34 +7,28 @@
     display: flex;
     flex-wrap: nowrap;
 
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    @include fullWidth();
-    @include breakpointDown(400px) {
+    @include breakpointDown(medium) {
+      @include fullWidth();
+      -webkit-overflow-scrolling: touch;
+      overflow-x: auto;
     }
 
     @include breakpoint(medium) {
       justify-content: center;
       flex-wrap: wrap;
       flex-direction: row;
-      flex-direction: #00000099;
     }
   }
 
   &__cell {
     flex: 0 0 auto;
     transition: opacity 0.3s;
+    max-width: 350px;
+    max-height: 350px;
+    overflow: hidden;
 
     @include breakpoint(small) {
       width: 100%;
-    }
-
-    @include breakpoint(medium) {
-      width: calc(100% / 3);
-    }
-
-    @include breakpoint(large) {
-      width: calc(100% / 4);
     }
 
     &:hover {
@@ -45,6 +39,8 @@
 
   &__img {
     object-fit: cover;
-    max-width: 100%;
+    width: 100%;
+    width: 350px;
+    height: 350px;
   }
 }
