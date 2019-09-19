@@ -1,0 +1,34 @@
+@mixin fullWidth() {
+  left: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  max-width: 100vw;
+  position: relative;
+  right: 50%;
+  width: 100vw;
+}
+
+@mixin shake() {
+  animation: shake 0.5s linear;
+
+  @keyframes shake {
+    8%,
+    41% {
+      transform: translateX(-5px);
+    }
+    25%,
+    58% {
+      transform: translateX(5px);
+    }
+    75% {
+      transform: translateX(-2px);
+    }
+    92% {
+      transform: translateX(2px);
+    }
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+  }
+}

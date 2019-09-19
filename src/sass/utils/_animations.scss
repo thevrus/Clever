@@ -1,11 +1,21 @@
 @mixin btnPress() {
-    transition: transform .2s, opacity .2s;
+  transition: transform 0.2s, opacity 0.2s;
 
-    &:hover {
-        opacity: .9;
-    }
+  &:hover {
+    opacity: 0.9;
+  }
 
-    &:active {
-        transform: translateY(1px);
-    }
+  &:active {
+    transform: translateY(1px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }

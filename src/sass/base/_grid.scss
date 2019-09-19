@@ -15,11 +15,22 @@ $breakpoints: (
     }
   }
 }
+@mixin breakpointDown($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (max-width: map-get($breakpoints, $breakpoint )) {
+      @content;
+    }
+  } @else {
+    @media (max-width: $breakpoint) {
+      @content;
+    }
+  }
+}
 
 .container {
-  max-width: 1120px;
+  max-width: 1140px;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 15px;
+  padding: 0 20px;
 }

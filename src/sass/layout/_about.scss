@@ -1,0 +1,52 @@
+.about {
+  &__card {
+    margin: 0;
+    padding: 0;
+    margin-top: 28px;
+
+    @include breakpoint(large) {
+      display: flex;
+      align-items: flex-start;
+    }
+  }
+
+  &__img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+
+    @include breakpoint(medium) {
+      float: right;
+      margin-right: 58px;
+    }
+  }
+
+  &__card-caption {
+    padding: 12px 28px 20px;
+    border-radius: 8px;
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 4px;
+    font-weight: bold;
+    font-size: 28px;
+    color: $primary;
+  }
+
+  &__subtitle {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-weight: 600;
+    font-size: 18px;
+    color: #333;
+  }
+
+  &__paragraph {
+    margin-bottom: 4px;
+    font-size: 16px;
+    line-height: 170%;
+    letter-spacing: 0.03em;
+    color: #333333;
+  }
+}

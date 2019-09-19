@@ -1,0 +1,56 @@
+.courses {
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__course {
+    flex-basis: calc(100% / 4);
+    min-height: 400px;
+    margin-bottom: 20px;
+    padding: 32px 16px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+
+    background: #fff;
+    box-shadow: 0px 10px 30px rgba(51, 51, 51, 0.04);
+    border-radius: 8px;
+    transition: transform 0.3s;
+    cursor: pointer;
+
+    &:hover {
+      transform: translateY(-4px);
+    }
+
+    &:hover .courses__avatar {
+      transform: scale(1.03);
+    }
+  }
+
+  &__avatar {
+    margin-bottom: 4px;
+    width: 172px;
+    height: 172px;
+    object-fit: cover;
+    border: 4px solid #efefef;
+    border-radius: 50%;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  &__title {
+    margin-bottom: 40px;
+    height: 80px;
+    font-weight: 400;
+    font-size: 18px;
+    color: #000;
+  }
+
+  &__button {
+    max-width: 200px;
+    margin: 0 auto;
+  }
+}

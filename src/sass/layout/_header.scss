@@ -16,14 +16,15 @@
   }
   &__title,
   &__subtitle {
-    color: #333;
+    color: #000;
     line-height: 1.5;
   }
 
   &__title {
     letter-spacing: 0.04em;
     font-size: 24px;
-    color: #f07363;
+    color: $primary;
+    animation: fadeIn ease-in 0.5s;
 
     @include breakpoint(large) {
       font-size: 40px;
@@ -31,13 +32,19 @@
   }
 
   &__subtitle {
+    animation: fadeIn ease-in 1s;
     font-size: 20px;
     line-height: 1.6;
     margin-bottom: 24px;
   }
 
-  @include breakpoint(medium) {
+  &__button {
+    animation: fadeIn ease-in 1s;
+    padding: 18px 60px;
+  }
+
+  @include breakpoint(large) {
     background: $headerColor url("img/girl-webp.webp") no-repeat right bottom;
-    background-size: auto 100%;
+    background-size: auto 110%;
   }
 }

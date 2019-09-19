@@ -48,14 +48,13 @@
   &__list-item-title {
     font-weight: bold;
     font-size: 24px;
-    color: #242424;
   }
 
   &__list-item-link {
-    color: #333333;
-
+    transition: color .3s;
     &:hover {
       text-decoration: underline;
+      color: $primary;
     }
   }
 

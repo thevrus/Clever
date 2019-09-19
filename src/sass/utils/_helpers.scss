@@ -9,3 +9,11 @@
 .sb {
   justify-content: space-between;
 }
+
+.fixed {
+  overflow: hidden;
+}
+
+.shake {
+  @include shake();
+}
