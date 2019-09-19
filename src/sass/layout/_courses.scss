@@ -6,10 +6,25 @@
   }
 
   &__course {
-    flex-basis: calc(100% / 4);
+    flex-basis: 100%;
     min-height: 400px;
-    margin-bottom: 20px;
     padding: 32px 16px;
+
+    @include breakpoint(600px) {
+      flex-basis: calc(96% / 2);
+      margin-bottom: 20px;
+
+      &:not(:last-child) {
+        margin-right: 1%;
+      }
+    }
+
+    @include breakpoint(large) {
+      flex-basis: calc(96% / 4);
+      &:not(:last-child) {
+        margin-right: 1%;
+      }
+    }
 
     display: flex;
     flex-direction: column;
