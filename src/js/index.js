@@ -48,9 +48,9 @@ const toggleModal = () => {
 }
 
 (function () {
-	const IMAGES = document.querySelectorAll('.mediumZoom');
+	const IMAGES = document.querySelectorAll('[data-zoom]');
 	if (IMAGES) {
-		mediumZoom('.mediumZoom', {
+		mediumZoom('[data-zoom]', {
 			background: 'rgba(0, 0, 0, 0.8)',
 		});
 	}
