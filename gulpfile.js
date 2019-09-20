@@ -135,7 +135,7 @@ gulp.task('js:prod', function () {
     .pipe(gulp.dest(PATHS.output))
 });
 
-gulp.task('watch', function () {
+gulp.task('watch', function (cb) {
   browserSync.init({
     server: {
       baseDir: './dist/'
@@ -147,6 +147,7 @@ gulp.task('watch', function () {
   gulp.watch(PATHS.scripts.input).on('change', gulp.series('js:dev'), browserSync.reload);
   gulp.watch(PATHS.images.input).on('change', gulp.series('images'), browserSync.reload);
   gulp.watch(PATHS.html.watch).on('change', gulp.series('fileinclude'), browserSync.reload);
+  cb();
 });
 
 gulp.task('default', gulp.series('clean', 'css:dev', 'js:dev', 'images', 'fileinclude', 'move', 'watch'));
