@@ -1,6 +1,6 @@
 .footer {
-  border-top: 1px solid #e6e6e6;
-  padding-top: 60px;
+  border-top: 1px solid #dfe4ea;
+  padding-top: 40px;
   padding-bottom: 68px;
 
   &__content {
@@ -30,10 +30,16 @@
 
   &__list {
     @include breakpoint(medium) {
+      &:not(:last-child) {
+        margin-right: 28px;
+      }
+    }
+
+    @include breakpoint(large) {
       margin-bottom: 0;
 
       &:not(:last-child) {
-        margin-right: 60px;
+        margin-right: 80px;
       }
     }
     &:not(:last-child) {
@@ -51,7 +57,7 @@
   }
 
   &__list-item-link {
-    transition: color .3s;
+    transition: color 0.3s;
     &:hover {
       text-decoration: underline;
       color: $primary;
@@ -61,7 +67,7 @@
   &__copyright {
     text-align: center;
     margin-top: 60px;
-    color: #242424;
+    color: #444444;
     padding: 0 15px;
     line-height: 1.5;
     font-size: 12px;

@@ -2,11 +2,11 @@
 @import "vendors/normalize";
 
 // Utils
+@import "utils/variables";
 @import "utils/mixins";
 @import "utils/scroll";
 @import "utils/animations";
 @import "utils/helpers";
-@import "utils/variables";
 
 // Base
 @import "base/reset";
@@ -20,6 +20,7 @@
 
 // Layout
 @import "layout/nav";
+@import "layout/nav-mobile";
 @import "layout/header";
 @import "layout/section";
 @import "layout/courses";

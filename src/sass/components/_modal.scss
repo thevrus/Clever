@@ -12,7 +12,6 @@
   transition: transform 0.3s ease-in-out, visibility 0.1s;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  animation: fadeIn 0.3s;
 
   &--open {
     visibility: visible;
@@ -26,7 +25,6 @@
 
   @include breakpoint(large) {
     padding: 60px 40px 40px;
-    height: 550px;
     max-width: 600px;
     top: 30%;
     left: 50%;
@@ -48,16 +46,35 @@
     }
   }
 
+  &__icon-status {
+    &--error > .modal__icon--success {
+      display: none;
+    }
+
+    &--error > .modal__icon--error {
+      display: block;
+    }
+  }
+
   &__icon {
-    animation: fadeIn ease-in 1s;
+    animation: breath 2s ease-in-out, pulse 2s ease-in-out;
+    animation-iteration-count: 2;
+
+    &--error {
+      margin-left: auto;
+      margin-right: auto;
+      display: none;
+      margin-bottom: 20px;
+    }
   }
 
   &__title {
+    margin-top: 0;
+    margin-bottom: 0;
     font-style: normal;
     font-weight: bold;
     font-size: 26px;
-    line-height: 15px;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.03em;
     color: #000000;
   }
 

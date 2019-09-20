@@ -14,16 +14,21 @@
     display: block;
     margin: 0 auto;
     max-width: 100%;
+    margin-bottom: 12px;
 
     @include breakpoint(medium) {
+      margin-bottom: 0;
       float: right;
       margin-right: 58px;
     }
   }
 
   &__card-caption {
-    padding: 12px 28px 20px;
-    border-radius: 8px;
+    padding: 12px 0 20px;
+
+    @include breakpoint(medium) {
+      padding: 12px 28px 20px;
+    }
   }
 
   &__title {
@@ -32,6 +37,7 @@
     font-weight: bold;
     font-size: 28px;
     color: $primary;
+    letter-spacing: 0.02em;
   }
 
   &__subtitle {

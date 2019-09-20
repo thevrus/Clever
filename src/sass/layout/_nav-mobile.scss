@@ -1,0 +1,56 @@
+.nav-mobile {
+  transform: translateY(-100%);
+  padding-top: 7px;
+  background-color: #fff;
+  position: absolute;
+  text-align: center;
+  z-index: 15;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  transition: transform 0.3s ease-in-out;
+
+  &--open {
+    transform: translateY(0);
+  }
+
+  @include breakpoint(large) {
+    display: none;
+  }
+
+  &__header {
+    position: relative;
+  }
+
+  &__close {
+    cursor: pointer;
+    position: absolute;
+    left: -5px;
+    top: 0;
+  }
+
+  &__logo-link {
+    display: block;
+    padding-top: 8px;
+  }
+
+  &__list {
+    text-align: left;
+    margin-top: 36px;
+  }
+
+  &__list-item {
+    margin-bottom: 32px;
+  }
+
+  &__link {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 0.05em;
+    color: #333;
+  }
+}

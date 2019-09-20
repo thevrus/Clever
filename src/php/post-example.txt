@@ -1,0 +1,33 @@
+<?php
+if (!empty($_POST)) {
+    $token = ""; // Telegram BOT Token
+    $chat_id = ""; // Telegram chat ID
+
+    $phone = $_POST['phone'];
+
+    date_default_timezone_set('Europe/Kiev');
+    $datetime = new DateTime();
+    $date = $datetime->format('Y-m-d H:i:s');
+
+    $arr = array(
+        'Время: ' => $date,
+        'Телефон: ' => $phone,
+    );
+    $txt = "";
+
+    foreach ($arr as $key => $value) {
+        $txt .= "<b>" . $key . "</b> " . $value . "%0A";
+    }
+
+    $link = "https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&parse_mode=html&text={$txt}";
+    $sendToTelegram = fopen($link, "r");
+
+    if ($sendToTelegram) {
+        header(200);
+    } else {
+        header(404);
+    }
+
+} else {
+    header(404);
+}

@@ -7,12 +7,25 @@
             <path d="m10 10 20 20" />
         </g>
     </svg>
-    <svg class="modal__icon" fill="none" height="240" viewBox="0 0 240 240" width="240"
-        xmlns="http://www.w3.org/2000/svg">
-        <circle cx="120" cy="120" fill="#ffd2cc" r="96" />
-        <path d="m175.756 82-76.5439 76.544-34.7927-34.793" stroke="#e12900" stroke-linecap="round"
-            stroke-linejoin="round" stroke-width="16.7005" /></svg>
+
+    <div class="modal__icon-status">
+        <svg class="modal__icon modal__icon--success" fill="none" height="240" viewBox="0 0 240 240" width="240"
+            xmlns="http://www.w3.org/2000/svg">
+            <circle cx="120" cy="120" fill="#ffd2cc" r="96" />
+            <path d="m175.756 82-76.5439 76.544-34.7927-34.793" stroke="#e12900" stroke-linecap="round"
+                stroke-linejoin="round" stroke-width="16.7005" /></svg>
+
+        <svg class="modal__icon modal__icon--error" fill="none" height="240" viewBox="0 0 240 240" width="240"
+            xmlns="http://www.w3.org/2000/svg">
+            <circle cx="120" cy="120" fill="#ffd2cc" r="96" />
+            <g stroke="#e12900" stroke-linecap="round" stroke-linejoin="round" stroke-width="12">
+                <path d="m150 90-60 60" />
+                <path d="m90 90 60 60" />
+            </g>
+        </svg>
+
+    </div>
     <h3 class="modal__title">Спасибо за заявку!</h3>
-    <h3 class="modal__subtitle">Мы вам перезвоним в течении <br><b>30 минут</b>.</h3>
+    <p class="modal__subtitle">Мы вам перезвоним в течении <br><b>30 минут</b>.</p>
     <button class="button button--primary button--fw">Закрыть</button>
 </section>

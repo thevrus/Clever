@@ -24,14 +24,16 @@
     display: flex;
     align-items: baseline;
     position: relative;
+    padding-top: 8px;
 
     @include breakpoint(medium) {
+      padding-top: 0;
       align-items: center;
     }
   }
 
   &__chat {
-    margin-right: 24px;
+    margin-right: 16px;
     transition: opacity 0.3s;
 
     &:hover ~ .bar__socials,
@@ -39,7 +41,7 @@
       display: block;
     }
     @include breakpoint(large) {
-      margin-right: 16px;
+      margin-right: 24px;
 
       &:hover {
         opacity: 0.8;

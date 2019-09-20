@@ -3,6 +3,7 @@
   background-color: $headerColor;
 
   &__content {
+    animation: fadeIn 2s;
     position: relative;
     height: 54px;
     display: flex;
