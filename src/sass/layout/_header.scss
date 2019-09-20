@@ -21,9 +21,12 @@
   }
 
   &__title {
-    letter-spacing: 0.04em;
     font-size: 24px;
-    color: $primary;
+    font-weight: 600;
+    margin-bottom: 20px;
+    letter-spacing: 0.06em;
+
+    color: #000000;
     animation: fadeIn 2s;
 
     @include breakpoint(large) {
@@ -35,7 +38,9 @@
     animation: fadeIn 3s;
     font-size: 20px;
     line-height: 1.6;
+    margin-top: 12px;
     margin-bottom: 24px;
+    color: #1a1a1a;
   }
 
   &__button {

@@ -32,7 +32,8 @@
 
   &--primary {
     background-color: $primary;
-    color: #fff;
+    color: #000;
+    font-weight: 500;
   }
   &--secondary {
     background-color: $secondary;
