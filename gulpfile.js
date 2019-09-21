@@ -59,15 +59,15 @@ gulp.task('images', function () {
     .pipe(gulp.dest(PATHS.output + '/img/'));
 });
 
-gulp.task('fileinclude', function (cb) {
+gulp.task('fileinclude', function () {
   return gulp.src(PATHS.html.input)
     .pipe(plumber())
     .pipe(fileinclude({
       prefix: '#',
       basepath: './src/html/pages'
     }))
-    .pipe(gulp.dest('./dist'));
-  cb();
+    .pipe(gulp.dest('./dist'))
+    .pipe(browserSync.stream());
 });
 
 gulp.task('fileinclude:prod', function () {
@@ -80,7 +80,7 @@ gulp.task('fileinclude:prod', function () {
     .pipe(gulp.dest('./dist'));
 });
 
-gulp.task('css:dev', function (cb) {
+gulp.task('css:dev', function () {
   return gulp
     .src(PATHS.styles.input)
     .pipe(sourcemaps.init())
@@ -89,7 +89,6 @@ gulp.task('css:dev', function (cb) {
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(PATHS.output))
     .pipe(browserSync.stream());
-  cb();
 });
 
 gulp.task('css:prod', function () {
@@ -114,12 +113,12 @@ gulp.task('css:prod', function () {
     .pipe(gulp.dest(PATHS.output));
 });
 
-gulp.task('js:dev', function (cb) {
+gulp.task('js:dev', function () {
   return gulp
     .src([ 'src/js/libs/*.js', 'src/js/index.js' ])
     .pipe(concat('index.js'))
-    .pipe(gulp.dest(PATHS.output));
-  cb();
+    .pipe(gulp.dest(PATHS.output))
+    .pipe(browserSync.stream());
 })
 
 gulp.task('babel', function () {
