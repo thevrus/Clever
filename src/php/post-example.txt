@@ -4,6 +4,7 @@ if (!empty($_POST)) {
     $chat_id = ""; // Telegram chat ID
 
     $phone = $_POST['phone'];
+    $course = $_POST['course'];
 
     date_default_timezone_set('Europe/Kiev');
     $datetime = new DateTime();
@@ -12,6 +13,7 @@ if (!empty($_POST)) {
     $arr = array(
         'Время: ' => $date,
         'Телефон: ' => $phone,
+        'Курс: ' => $course,
     );
     $txt = "";
 

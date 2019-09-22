@@ -1,17 +1,33 @@
 document.addEventListener('DOMContentLoaded', () => {
+
 	// Form send
 	(function () {
 		const BUTTON_FORM = document.querySelector('.button[type=submit]');
 		const PHONE_INPUT = document.querySelector('.subscribe__input[name=phone]');
+		const COURSES_BTTNS = document.querySelectorAll('[data-course]');
 
-		PHONE_INPUT.addEventListener('input', (event) => {
+		let selectedCourse = "";
+
+		if (COURSES_BTTNS) {
+			COURSES_BTTNS.forEach(button => {
+				button.addEventListener('click', () => {
+					selectedCourse = button.getAttribute('data-course');
+				})
+			})
+		}
+
+		PHONE_INPUT.addEventListener('input', () => {
 			PHONE_INPUT.value = PHONE_INPUT.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
 		});
 
 		BUTTON_FORM.addEventListener('click', () => {
 
 			if (PHONE_INPUT && PHONE_INPUT.value.length > 0) {
-				sendPhone(PHONE_INPUT.value);
+				if (selectedCourse.length > 0) {
+					sendPhone(PHONE_INPUT.value, selectedCourse);
+				} else {
+					sendPhone(PHONE_INPUT.value);
+				}
 				PHONE_INPUT.value = "";
 			} else {
 				PHONE_INPUT.classList.toggle('shake');
@@ -22,15 +38,16 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 		});
 
-		const sendPhone = (data) => {
-			if (!data) return;
+		const sendPhone = (phone, course) => {
+			if (!phone) return;
 
 			const url = 'post.php';
 			const request = new XMLHttpRequest();
+			const stringToSend = "phone=" + phone + (course ? ("&course=" + course) : "");
 
 			request.open('POST', url, true);
 			request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
-			request.send("phone=" + data);
+			request.send(stringToSend);
 			request.onload = function () {
 				if (this.status === 200 && this.status < 400) {
 					toggleModal();
@@ -97,6 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		const NAV_BURGER = document.querySelector('.nav__button');
 		const NAV_MOBILE = document.querySelector('.nav-mobile');
 		const NAV_MOBILE_CLOSE = NAV_MOBILE.querySelector('.nav-mobile__close');
+		const NAV_MOBILE_LINKS = NAV_MOBILE.querySelectorAll('.nav-mobile__link');
 		const BACKDROP = document.querySelector(".backdrop");
 
 		const openMenu = () => {
@@ -110,10 +128,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		if (BACKDROP) BACKDROP.addEventListener('click', closeMenu);
 
+		if (NAV_MOBILE_LINKS) {
+			NAV_MOBILE_LINKS.forEach(link => {
+				link.addEventListener('click', closeMenu);
+			})
+		}
+
 		NAV_BURGER.addEventListener('click', openMenu);
-
 		NAV_MOBILE_CLOSE.addEventListener('click', closeMenu);
+	})();
 
+	// Bar chat hover
+	(function () {
+		const BAR_CHAT_ICON = document.querySelector('.bar__chat');
+
+		BAR_CHAT_ICON.addEventListener('click', () => {
+			BAR_CHAT_ICON.classList.toggle('bar__socials--open');
+		});
 	})();
 });
-

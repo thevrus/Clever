@@ -1,0 +1,91 @@
+.course {
+  &__list {
+    @include breakpoint(medium) {
+      padding-top: 48px;
+    }
+  }
+
+  &__service-item {
+    padding-top: 20px;
+    min-height: 200px;
+    margin-bottom: 60px;
+    border-top: 1px solid #dfe4ea;
+
+    @include breakpoint(medium) {
+      padding-top: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+  }
+
+  &__title-wrap {
+    margin-top: 0;
+    max-width: 300px;
+    margin-right: 28px;
+  }
+
+  &__type {
+    margin-top: 0;
+    margin-bottom: 4px;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $primary;
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 24px;
+    letter-spacing: 0.03em;
+    color: #000;
+  }
+
+  &__description {
+    margin-top: 0;
+    font-size: 16px;
+    line-height: 165%;
+    letter-spacing: 0.03em;
+
+    @include breakpoint(medium) {
+      max-width: 300px;
+      margin-right: 28px;
+    }
+  }
+
+  &__price {
+    margin-top: 0;
+    margin-bottom: 28px;
+    font-weight: 600;
+    font-size: 40px;
+    letter-spacing: 0.02em;
+    color: #000;
+
+    @include breakpoint(medium) {
+      margin-right: 28px;
+      font-size: 30px;
+    }
+
+    &::after {
+      content: "грн";
+      margin-left: 4px;
+      font-weight: 600;
+      font-size: 18px;
+    }
+  }
+
+  &__button {
+    margin: 0;
+    padding-left: 40px;
+    padding-right: 40px;
+    width: 100%;
+
+    @include breakpoint(medium) {
+      width: auto;
+    }
+  }
+}

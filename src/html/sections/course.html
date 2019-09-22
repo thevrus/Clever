@@ -1,0 +1,11 @@
+<li class="course__service-item">
+  <div class="course__title-wrap">
+    #if (context.type) {
+      <p class="course__type">#type</p>
+    }
+    <h5 class="course__title">#title</h5>
+  </div>
+  <p class="course__description">#description</p>
+  <p class="course__price">#price</p>
+  <a href="#subscribe" data-course="#title" class="button button--outline-p course__button">Записаться</a>
+</li>

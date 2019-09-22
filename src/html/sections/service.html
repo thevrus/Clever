@@ -1,0 +1,19 @@
+<section class="container service">
+  <div class="service__content">
+  <h1 class="service__title">#title</h1>
+
+    #for(var i = 0; i < paragraphs.length; i++) {
+      <p class="service__paragraph">
+        `+paragraphs[i]+`
+      </p>
+      }
+  </div>
+
+  <ul class="service__gallery">
+    #for(var i = 0; i < images.length; i++) {
+      <li class="service__gallery-cell">
+        <img src="`+images[i]+`" alt="Фото работ нашей студии" class="service__img" data-zoom>
+      </li>
+      }
+  </ul>
+</section>

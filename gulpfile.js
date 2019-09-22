@@ -152,5 +152,5 @@ gulp.task('watch', function (cb) {
   cb();
 });
 
-gulp.task('default', gulp.series('clean', 'css:dev', 'js:dev', 'images', 'fileinclude', 'move', 'watch'));
-gulp.task('build', gulp.series('clean', 'fileinclude:prod', 'babel', 'css:prod', 'js:prod', 'images', 'move'));
+gulp.task('default', gulp.series('clean', 'css:dev', 'js:dev', 'images', 'fileinclude', 'watch'));
+gulp.task('build', gulp.series('clean', 'fileinclude:prod', 'babel', 'css:prod', 'js:prod', 'images'));

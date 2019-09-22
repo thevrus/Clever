@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /post.php
+Disallow: /favicon.ico
+Disallow: /index.js
+Disallow: /main.css
+Disallow: /img/
+Host: https://cleverstudio.kiev.ua
+Sitemap: https://cleverstudio.kiev.ua/sitemap.xml

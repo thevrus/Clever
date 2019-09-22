@@ -1,0 +1,44 @@
+.service {
+  margin-top: 40px;
+
+  &__title {
+    font-weight: bold;
+    font-size: 34px;
+    letter-spacing: 0.03em;
+    color: #000;
+  }
+
+  &__content {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__paragraph {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 165%;
+    margin-bottom: 4px;
+  }
+
+  &__gallery {
+    margin-top: 20px;
+    margin-bottom: 40px;
+
+    @include breakpoint(medium) {
+      display: flex;
+    }
+  }
+
+  &__img {
+    border-radius: 4px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    @include breakpoint(medium) {
+      border-radius: 0px;
+    }
+  }
+}

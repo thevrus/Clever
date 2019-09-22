@@ -110,6 +110,10 @@
     &:hover > .bar__socials-item:not(:hover) {
       opacity: 0.5;
     }
+
+    &--open {
+      display: block;
+    }
   }
 
   &__socials-item {
